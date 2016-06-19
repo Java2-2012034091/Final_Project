@@ -16,17 +16,12 @@ public class Calculator extends JFrame implements ActionListener {
 	   JPanel panel;
 	   JTextField display;
 	   JButton[] buttons;
-<<<<<<< HEAD
 	   String[] labels = {"MC", "MR", "MS", "M+", "M-", "Backspace", "CE", "C", "+-", "sqrt", "7", "8", "9", "/", "%", "4", "5", "6", "*", "1/x", "1", "2", "3", "-", "", "0", "", ".", "+", "="};
-=======
-	   String[] labels = {"Backspace", " ", " ", "CE", "C", "7", "8", "9", "/", "sqrt", "4", "5", "6", "*", "%", "1", "2", "3", "-", "1/x", "0", "+/-", ".", "+", "="};
->>>>>>> refs/remotes/origin/Hotfix
 
 	   double result = 0;
 	   String operator = "=";
 	   
 	   public Calculator(){
-<<<<<<< HEAD
 		      display = new JTextField(40);
 		      panel = new JPanel();
 		      display.setText(" ");
@@ -37,18 +32,6 @@ public class Calculator extends JFrame implements ActionListener {
 		         for(int cols=0; cols<5; cols++){
 		            buttons[index] = new JButton(labels[index]);
 		            if(cols>=3 || rows<2)
-=======
-		      display = new JTextField(35);
-		      panel = new JPanel();
-		      display.setText(" ");
-		      panel.setLayout(new GridLayout(0, 5, 3, 3));
-		      buttons = new JButton[25];
-		      int index = 0;
-		      for(int rows=0; rows<5; rows++){
-		         for(int cols=0; cols<5; cols++){
-		            buttons[index] = new JButton(labels[index]);
-		            if(cols>=3)
->>>>>>> refs/remotes/origin/Hotfix
 		               buttons[index].setForeground(Color.red);
 		            else
 		               buttons[index].setForeground(Color.blue);
@@ -63,12 +46,7 @@ public class Calculator extends JFrame implements ActionListener {
 		      setVisible(true);
 		      pack();
 		   }
-<<<<<<< HEAD
 	    
-=======
-	   
-	 
->>>>>>> refs/remotes/origin/Hotfix
 
 
 		      
