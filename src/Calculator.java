@@ -12,7 +12,7 @@ import javax.swing.JTextField;
 public class Calculator extends JFrame implements ActionListener {
 
 	JPanel panel;
-	JTextField display;
+	JTextField text;
 	JButton[] buttons;
 	String[] labels = { "MC", "MR", "MS", "M+", "M-", "Backspace", "CE", "C", "+-", "sqrt", "7", "8", "9", "/", "%",
 			"4", "5", "6", "*", "1/x", "1", "2", "3", "-", "", "0", "", ".", "+", "=" };
@@ -22,9 +22,10 @@ public class Calculator extends JFrame implements ActionListener {
 	private boolean startOfNumber = true;
 
 	public Calculator() {
-		display = new JTextField(40);
+		setTitle("°è»ê±â");
+		text = new JTextField(40);
 		panel = new JPanel();
-		display.setText(" ");
+		text.setText(" ");
 		panel.setLayout(new GridLayout(0, 5, 3, 3));
 		buttons = new JButton[30];
 		int index = 0;
@@ -40,10 +41,11 @@ public class Calculator extends JFrame implements ActionListener {
 				index++;
 			}
 		}
-		add(display, BorderLayout.NORTH);
+		add(text, BorderLayout.NORTH);
 		add(panel, BorderLayout.CENTER);
 		setVisible(true);
-		pack();
+		pack();	
+		
 	}
 
 	public void actionPerformed(ActionEvent e) {
@@ -52,26 +54,27 @@ public class Calculator extends JFrame implements ActionListener {
 			startOfNumber = true;
 			result = 0;
 			operator = "=";
-			display.setText("0.0");
+			text.setText("0.0");
 		}
+		
 	    else if(command.charAt(0) >= '0' && command.charAt(0) <= '9' || command.equals(".")){
             if(startOfNumber == true)
-               display.setText(command);
+               text.setText(command);
             else
-               display.setText(display.getText() + command);
+               text.setText(text.getText() + command);
             startOfNumber = false;
          }
 	    else{
             if(startOfNumber){
                if(command.equals("-")){
-                  display.setText(command);
+                  text.setText(command);
                   startOfNumber = false;
                }
                else
                   operator = command;
                }
             else{
-               double x = Double.parseDouble(display.getText());
+               double x = Double.parseDouble(text.getText());
                calculate(x);
                operator = command;
                startOfNumber = true;
@@ -89,7 +92,8 @@ public class Calculator extends JFrame implements ActionListener {
            result /= n;
         else if(operator.equals("="))
            result = n;
-        display.setText(" " + result);
+        
+        text.setText(" " + result);
         }
 
 
