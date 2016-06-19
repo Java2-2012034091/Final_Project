@@ -35,7 +35,6 @@ public class Calculator extends JFrame implements ActionListener {
 					buttons[index].setForeground(Color.red);
 				else
 					buttons[index].setForeground(Color.blue);
-				buttons[index].setBackground(Color.yellow);
 				panel.add(buttons[index]);
 				buttons[index].addActionListener(this);
 				index++;
