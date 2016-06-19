@@ -16,22 +16,22 @@ public class Calculator extends JFrame implements ActionListener {
 	   JPanel panel;
 	   JTextField display;
 	   JButton[] buttons;
-	   String[] labels = {"Backspace", " ", " ", "CE", "C", "7", "8", "9", "/", "sqrt", "4", "5", "6", "*", "%", "1", "2", "3", "-", "1/x", "0", "+/-", ".", "+", "="};
+	   String[] labels = {"MC", "MR", "MS", "M+", "M-", "Backspace", "CE", "C", "+-", "sqrt", "7", "8", "9", "/", "%", "4", "5", "6", "*", "1/x", "1", "2", "3", "-", "", "0", "", ".", "+", "="};
 
 	   double result = 0;
 	   String operator = "=";
 	   
 	   public Calculator(){
-		      display = new JTextField(35);
+		      display = new JTextField(40);
 		      panel = new JPanel();
 		      display.setText(" ");
 		      panel.setLayout(new GridLayout(0, 5, 3, 3));
-		      buttons = new JButton[25];
+		      buttons = new JButton[30];
 		      int index = 0;
-		      for(int rows=0; rows<5; rows++){
+		      for(int rows=0; rows<6; rows++){
 		         for(int cols=0; cols<5; cols++){
 		            buttons[index] = new JButton(labels[index]);
-		            if(cols>=3)
+		            if(cols>=3 || rows<2)
 		               buttons[index].setForeground(Color.red);
 		            else
 		               buttons[index].setForeground(Color.blue);
@@ -46,8 +46,7 @@ public class Calculator extends JFrame implements ActionListener {
 		      setVisible(true);
 		      pack();
 		   }
-	   
-	 
+	    
 
 
 		      
